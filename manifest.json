@@ -1,7 +1,7 @@
 {
   "id": "obsidian-daily-manager",
   "name": "Obsidian Daily Manager Plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minAppVersion": "0.1.0",
   "description": "This is a plugin for Obsidian. This plugin is used for daily work and life.",
   "author": "Leon",
