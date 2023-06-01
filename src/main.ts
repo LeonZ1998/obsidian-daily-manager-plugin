@@ -1,33 +1,17 @@
-import { App, Notice, Plugin, WorkspaceLeaf } from "obsidian";
-import { CSVView, VIEW_TYPE_CSV } from "./view";
-import SampleSettingTab from "./setting";
+import { Notice, Plugin, PluginManifest, App, WorkspaceLeaf, Platform } from "obsidian";
+import { DAILY_MANAGER_VIEW_TYPE, DailyMnagerView } from "./ui/view/view";
+import TaskStopwatchSettingTab, { DailyManagerPluginSettings, DEFAULT_SETTINGS } from './setting';
+import { SqlUtil } from "./utils/sql/sql";
+import { PicHandler } from "./utils/pichandler";
+import moment from "moment";
 
-interface MyPluginSettings {
-  mySetting: string;
-}
+export default class DailyMnagerPlugin extends Plugin {
+  settings: DailyManagerPluginSettings;
+  view: DailyMnagerView;
+  taskStopwatchDBPath: string;
 
-const DEFAULT_SETTINGS: MyPluginSettings = {
-  mySetting: "default",
-};
-
-export default class MyPlugin extends Plugin {
-  // @ts-ignore
-  settings: MyPluginSettings;
-
-  async onload() {
-    await this.loadSettings();
-
-    this.registerView(
-      VIEW_TYPE_CSV,
-      (leaf: WorkspaceLeaf) => new CSVView(leaf)
-    );
-    this.registerExtensions(["csv"], VIEW_TYPE_CSV);
-
-    this.addSettingTab(new SampleSettingTab(this.app, this));
-    this.addRibbonIcon("pencil", "Daily manager", () => {
-      new Notice("Daily Manager!");
-      
-    })
+  constructor(app: App, manifest: PluginManifest) {
+    super(app, manifest);
   }
 
   async loadSettings() {
@@ -36,5 +20,42 @@ export default class MyPlugin extends Plugin {
 
   async saveSettings() {
     await this.saveData(this.settings);
+  }
+
+  async onload() {
+    // register leafview 
+    this.registerView(
+      DAILY_MANAGER_VIEW_TYPE,
+      (leaf: WorkspaceLeaf) => (this.view = new DailyMnagerView(leaf))
+    );
+
+    // add settingTab
+    await this.loadSettings();
+    this.addSettingTab(new TaskStopwatchSettingTab(this.app, this));
+
+    this.addRibbonIcon("checkmark", "Open Daily Manager", (evt: MouseEvent) => {
+      if (evt) {
+        this.openTaskStopwatchView();
+      }
+    });
+
+    SqlUtil.init(this);
+    PicHandler.init(this);
+  }
+
+  openTaskStopwatchView() {
+    new Notice("Open Daily Manager!");
+    this.app.workspace.detachLeavesOfType(DAILY_MANAGER_VIEW_TYPE);
+    this.app.workspace.getRightLeaf(false).setViewState({
+      type: DAILY_MANAGER_VIEW_TYPE,
+      active: true,
+    });
+  }
+
+  async onunload() {
+    localStorage.setItem("closedTime", JSON.stringify(moment().unix()));
+    this.app.workspace
+      .getLeavesOfType(DAILY_MANAGER_VIEW_TYPE)
+      .forEach((leaf) => leaf.detach());
   }
 }

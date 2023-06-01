@@ -1,9 +1,9 @@
 {
   "id": "obsidian-daily-manager",
-  "name": "Daily Manager",
-  "version": "1.0.1",
-  "minAppVersion": "0.0.0",
-  "description": "This is a sample plugin for Obsidian. This plugin is used for daily work and life.",
+  "name": "Obsidian Daily Manager Plugin",
+  "version": "1.0.0",
+  "minAppVersion": "0.1.0",
+  "description": "This is a plugin for Obsidian. This plugin is used for daily work and life.",
   "author": "Leon",
   "authorUrl": "",
   "isDesktopOnly": false

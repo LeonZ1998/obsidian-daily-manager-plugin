@@ -1,31 +1,54 @@
 import { App, PluginSettingTab, Setting } from "obsidian";
-import MyPlugin from "./main";
+import DailyMnagerPlugin from "./main";
 
-export default class SampleSettingTab extends PluginSettingTab {
-  plugin: MyPlugin;
+export interface DailyManagerPluginSettings {
+  uploadServer: string;
+  dailyManagerDBPath: string;
+}
 
-  constructor(app: App, plugin: MyPlugin) {
+export const DEFAULT_SETTINGS: DailyManagerPluginSettings = {
+  uploadServer: "http://127.0.0.1:36677/upload",
+  dailyManagerDBPath: "/"
+}
+
+export default class DailyMnagerSettingTab extends PluginSettingTab {
+  plugin: DailyMnagerPlugin;
+
+  constructor(app: App, plugin: DailyMnagerPlugin) {
     super(app, plugin);
     this.plugin = plugin;
   }
 
   display(): void {
-    let { containerEl } = this;
-
+    const { containerEl } = this;
     containerEl.empty();
 
-    containerEl.createEl("h2", { text: "Settings for my awesome plugin." });
-
+    containerEl.createEl('h2', { text: 'DB File Path' });
     new Setting(containerEl)
-      .setName("Setting #1")
-      .setDesc("It's a secret")
-      .addText((text) =>
+      .setName("db file path")
+      .setDesc("daily manager db file path")
+      .addText(text =>
         text
-          .setPlaceholder("Enter your secret")
-          .setValue(this.plugin.settings.mySetting)
-          .onChange(async (value) => {
-            console.log("Secret: " + value);
-            this.plugin.settings.mySetting = value;
+          .setPlaceholder("Please input db file path")
+          .setValue(this.plugin.settings.dailyManagerDBPath)
+          .onChange(async key => {
+            this.plugin.settings.dailyManagerDBPath = key;
+            await this.plugin.saveSettings();
+          })
+      );
+
+    containerEl.createEl('h2', { text: 'Image Uploader Setting' });
+
+    //Piclist upload server
+    new Setting(containerEl)
+      .setName("upload server")
+      .setDesc("upload server")
+      .addText(text =>
+        text
+          .setPlaceholder("Please input piclist upload server")
+          .setValue(this.plugin.settings.uploadServer)
+          .onChange(async key => {
+            this.plugin.settings.uploadServer = key;
             await this.plugin.saveSettings();
           })
       );
