@@ -83,4 +83,4 @@ This is a plugin for Obsidian. This plugin is used for daily work and life.
 
 ## How to install
 
-Download the latest [release.zip]() from Releases page，then put the extracted folder `obsidian-daily-manager-plugin` into your {{obsidian_vault}}/.obsidian/plugins folder.
+Download the latest [release.zip](https://github.com/LeonZ1998/obsidian-daily-manager-plugin/releases/) from Releases page，then put the extracted folder `obsidian-daily-manager-plugin` into your {{obsidian_vault}}/.obsidian/plugins folder.
