@@ -8,15 +8,15 @@ This is a plugin for Obsidian. This plugin is used for daily work and life.
 
 1. create/delete/cancel tasks
 2. tasks classification
-   1. inbox
-   2. projects
-   3. today
-   4. scheduled
-   5. completed
-   6. won't do
+   -  inbox
+   -  projects
+   -  today
+   -  scheduled
+   -  completed
+   -  won't do
 3. add tasks from markdown file to inbox
 
-<img src="assets/public/1.png" style="zoom:50%">
+<img src="assets/public/1.png" width=50%>
 
 ### Tasks stopwatch
 
@@ -24,16 +24,16 @@ This is a plugin for Obsidian. This plugin is used for daily work and life.
 2. start/stop/continue/end stopwatch
 3. add focus record
 
-<img src="assets/public/2.png" style="zoom:50%">
+<img src="assets/public/2.png" width=50%>
 
-<img src="assets/public/3.png" style="zoom:50%">
+<img src="assets/public/3.png" width=50%>
 
 ### Bill manager
 
 1. bill classification
 2. bill list
 
-<img src="assets/public/4.png" style="zoom:50%">
+<img src="assets/public/4.png" width=50%>
 
 ### Habit tracker
 
@@ -41,19 +41,19 @@ This is a plugin for Obsidian. This plugin is used for daily work and life.
 2. select repeatition period
 3. add habit checkin number 
 
-<img src="assets/public/5.png" style="zoom:50%">
+<img src="assets/public/5.png" width=50%>
 
-<img src="assets/public/6.png" style="zoom:50%">
+<img src="assets/public/6.png" width=50%>
 
 ### Daily review
 
 1. weather
 2. daily review
-   1. select date
-   2. select mood
-   3. add daily review text
+   -  select date
+   -  select mood
+   -  add daily review text
 
-<img src="assets/public/7.png" style="zoom:50%">
+<img src="assets/public/7.png" width=50%>
 
 ### Data statistics
 
@@ -66,20 +66,19 @@ This is a plugin for Obsidian. This plugin is used for daily work and life.
 7. year summary
 8. save and clear year data
 
-<img src="assets/public/8.png" style="zoom:50%">
+<img src="assets/public/8.png" width=50%>
 
-<img src="assets/public/9.png" style="zoom:50%">
+<img src="assets/public/9.png" width=50%>
 
-<img src="assets/public/10.png" style="zoom:50%">
+<img src="assets/public/10.png" width=50%>
 
-<img src="assets/public/11.png" style="zoom:50%">
+<img src="assets/public/11.png" width=50%>
 
-<img src="assets/public/12.png" style="zoom:50%">
+<img src="assets/public/12.png" width=50%>
 
-<img src="assets/public/13.png" style="zoom:50%">
+<img src="assets/public/13.png" width=50%>
 
-<img src="assets/public/14.png" style="zoom:50%">
-
+<img src="assets/public/14.png" width=50%>
 
 ## How to install
 
