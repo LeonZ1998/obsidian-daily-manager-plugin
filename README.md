@@ -8,12 +8,12 @@ This is a plugin for Obsidian. This plugin is used for daily work and life.
 
 1. create/delete/cancel tasks
 2. tasks classification
-   1. inbox
-   2. projects
-   3. today
-   4. scheduled
-   5. completed
-   6. won't do
+   - inbox
+   - projects
+   - today
+   - scheduled
+   - completed
+   - won't do
 3. add tasks from markdown file to inbox
 
 <img src="assets/public/1.png" style="zoom:50%">
@@ -49,9 +49,9 @@ This is a plugin for Obsidian. This plugin is used for daily work and life.
 
 1. weather
 2. daily review
-   1. select date
-   2. select mood
-   3. add daily review text
+   - select date
+   - select mood
+   - add daily review text
 
 <img src="assets/public/7.png" style="zoom:50%">
 
