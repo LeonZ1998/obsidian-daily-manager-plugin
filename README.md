@@ -8,12 +8,12 @@ This is a plugin for Obsidian. This plugin is used for daily work and life.
 
 1. create/delete/cancel tasks
 2. tasks classification
-   -  inbox
-   -  projects
-   -  today
-   -  scheduled
-   -  completed
-   -  won't do
+   - inbox
+   - projects
+   - today
+   - scheduled
+   - completed
+   - won't do
 3. add tasks from markdown file to inbox
 
 <img src="assets/public/1.png" width=50%>
