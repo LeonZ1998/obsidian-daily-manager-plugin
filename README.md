@@ -16,6 +16,8 @@ This is a plugin for Obsidian. This plugin is used for daily work and life.
    - won't do
 3. add tasks from markdown file to inbox
 
+![](assets/public/1.png)
+
 <img src="assets/public/1.png" style="zoom:50%">
 
 ### Tasks stopwatch
